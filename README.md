@@ -1,12 +1,12 @@
 # 🏛️ DealBrain: M&A Due Diligence Intelligence Agent
-DealBrain is a high-performance, multi-agent AI system designed to automate the grueling process of M&A due diligence. By leveraging Google's **Agent Development Kit (ADK)** and the **Gemini 2.0 Flash** model, DealBrain transforms weeks of manual document review into minutes of automated, high-fidelity analysis.
+DealBrain is a high-performance, multi-agent AI system designed to automate the grueling process of M&A due diligence. By leveraging Google's **Agent Development Kit (ADK)** and the **Gemini 2.5 Flash** model, DealBrain transforms weeks of manual document review into minutes of automated, high-fidelity analysis.
 ## 🚀 Overview
 M&A analysts typically spend 3-6 weeks manually combing through data rooms (10,000+ documents) to surface deal risks. DealBrain ingests these documents, classifies them, extracts critical metadata, identifies financial and regulatory risks, benchmarks valuation, and generates structured investment memos—all in real-time.
 ---
 ## 🔄 End-to-End Workflow
 The system follows a sophisticated orchestration pattern, delegating specialized tasks to dedicated sub-agents:
 1.  **Ingestion & Classification**: A banker uploads deal documents (CIM, 10-K, contracts, financials) via the `/analyze` endpoint.
-2.  **Orchestration**: The **Manager Agent (Gemini 2.0 Flash)** classifies the documents, extracts initial deal metadata, and delegates work to specialized sub-agents.
+2.  **Orchestration**: The **Manager Agent (Gemini 2.5 Flash)** classifies the documents, extracts initial deal metadata, and delegates work to specialized sub-agents.
 3.  **Specialized Analysis**:
     *   **Financial Risk Agent**: Extracts flags such as covenant breaches, debt triggers, and hidden liabilities.
     *   **Market Comps Agent**: Pulls historical benchmark data and calculates valuation multiples (EV/EBITDA).
@@ -20,7 +20,7 @@ DealBrain is built on a modern, serverless architecture on Google Cloud Platform
 *   **Compute**: FastAPI entry point and ADK orchestration layer running on **Cloud Run**.
 *   **Database**: **AlloyDB for PostgreSQL** for high-performance structured data storage (deals, flags, comps, milestones).
 *   **Storage**: **Cloud Storage** for raw deal documents.
-*   **Intelligence**: **Gemini 2.0 Flash** providing the reasoning engine for all agents.
+*   **Intelligence**: **Gemini 2.5 Flash** providing the reasoning engine for all agents.
 *   **Integration**: **MCP (Model Context Protocol)** servers for Gmail and Calendar, deployed as independent Cloud Run services.
 ---
 ## 📂 Project Structure
@@ -48,7 +48,7 @@ dealbrain/
 ---
 ## 🛠️ Technologies Involved
 *   **Core**: Python 3.12+, FastAPI
-*   **AI/LLM**: Google Generative AI (Gemini 2.0 Flash), Agent Development Kit (ADK)
+*   **AI/LLM**: Google Generative AI (Gemini 2.5 Flash), Agent Development Kit (ADK)
 *   **Database**: AlloyDB (PostgreSQL)
 *   **Cloud**: Google Cloud Run, Cloud Storage, Secret Manager
 *   **Tooling**: MCP (Model Context Protocol), `asyncpg` for database connectivity
