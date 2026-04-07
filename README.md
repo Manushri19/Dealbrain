@@ -47,7 +47,7 @@ dealbrain/
 ```
 ---
 ## 🛠️ Technologies Involved
-*   **Core**: Python 3.12+, FastAPI
+*   **Core**: Python 3.14+, FastAPI
 *   **AI/LLM**: Google Generative AI (Gemini 2.5 Flash), Agent Development Kit (ADK)
 *   **Database**: AlloyDB (PostgreSQL)
 *   **Cloud**: Google Cloud Run, Cloud Storage, Secret Manager
